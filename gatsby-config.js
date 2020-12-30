@@ -1,17 +1,30 @@
 module.exports = {
   siteMetadata: {
-    title: "My Personal Website",
+    title: "Benjamin Steinig",
+    description: "Welcome to my personal website!",
+    author: "Ben Steinig",
+    siteUrl: "https://bensteinig.com",
   },
   plugins: [
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: `assets`,
+        path: `${__dirname}/src/assets/`,
       },
-      __key: "images",
+    },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://localhost:1337`,
+        queryLimit: 1000, // Default to 100
+        contentTypes: [],
+        //'jobs`,`projects`
+        singleTypes: [],
+      },
     },
   ],
-};
+}
