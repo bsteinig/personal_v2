@@ -23,7 +23,7 @@ module.exports = {
         queryLimit: 1000, // Default to 100
         contentTypes: [],
         //'jobs`,`projects`
-        singleTypes: [],
+        singleTypes: [`about`],
       },
     },
   ],
