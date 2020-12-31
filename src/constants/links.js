@@ -5,29 +5,38 @@ const data = [
     {
         id: 1,
         text:  "About",
-        url:  "/",
+        url:  "/#About",
+     
     },
     {
         id: 2,
         text:  "Experience",
-        url:  "/",
+        url:  "/#Experience",
+       
     },
     {
         id: 3,
         text:  "Projects",
-        url:  "/",
+        url:  "/#Projects",
+        
     },
     {
         id: 4,
-        text:  "Resume",
-        url:  "/",
+        text:  "Contact",
+        url:  "/#Contact",
+      
     },
+    {
+        id: 5,
+        text: "Resume",
+        url: "https://drive.google.com/file/d/1kekKQX7JYlBMpzc4lIwf9QpCiqEaEa_5/view?usp=sharing"
+    }
 ]
 
 const tempLinks = data.map(link => {
     return (
         <li key={link.id}>
-            <Link to={link.url}>{link.text}</Link>
+            <Link to={link.url} >{link.text}</Link>
         </li>
     )
 })

@@ -30,15 +30,15 @@ const About = () => {
     const data = useStaticQuery(query)
     const {allStrapiAbout:{nodes:about}} = data
     const {thingy, info, stack, profile} = about[0]
-    console.log(profile)
     return (
-        <section className="section">
+        <section id="About" className="section about-section">
             <div className="section-center about-center">
                 
                 <Image fluid={profile.childImageSharp.fluid} className="about-img"/>
                 <article className="about-text">
                     <Title title={thingy}></Title>
                     <p>{info}</p>
+                    <p>helloo <br/>again</p>
                     <div className="about-stack">
                         {stack.map((item) => {
                             return (
