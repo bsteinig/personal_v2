@@ -2,25 +2,25 @@
  Fonts 
  *************/
 
- @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
  /*************
  Variables
  *************/
 
  :root {
-    --dark-navy: #050607;
-    --slate: #384040;
-    --light-slate: #586c77;
-    --lightest-slate: #87a5b6;
-    --white: #e6f1ff;
-    --green: #47bd9f;
-    --light-green: #cbe8c8;
-    --dark-green: #183e34;
-    --green-tint: rgba(100,255,218,0.1);
-    --font-sans: "Lato",-apple-system,system-ui,sans-serif;
-    --font-mono: "Fira Mono",monospace;
+    --dark-navy: #0A121F;
+    --slate: #2C4E63;
+    --light-slate: #4C87A9;
+    --lightest-slate: #8EB5CC;
+    --white: #F1FAEE;
+    --green: #FAA80F;
+    --yellow: #FCCC73;
+    --light-green: #ADE2FF;
+    /* FCCC73 */
+    --font-sans: "Montserrat",-apple-system,system-ui,sans-serif;
+    --font-mono: "DM Serif Display",monospace;
     --transition: all 0.3s linear;
     --spacing: 0.2rem;
     --radius: 0.25rem;
@@ -126,7 +126,7 @@ p {
     border-radius: var(--radius);
   }
   .btn:hover {
-    color: var(--dark-green);
+    color: var(--slate);
     background: var(--light-green);
   }
   .center-btn {
@@ -179,7 +179,6 @@ max-width: 1170px;
   .social-link {
     font-size: 1.75rem;
     color: var(--slate);
-    transition: var(--dark-green);
   }
   .social-link:hover {
     color: var(--green);
@@ -195,6 +194,7 @@ Navbar
 .logo {
     height: 5rem;
     width: 5rem;
+    color: var(--green);
 }
 
 .navbar {
@@ -250,15 +250,22 @@ Navbar
 
     .nav-links a {
       text-transform: capitalize;
-      color: var(--dark-navy);
+      color: var(--black);
       font-weight: bold;
       letter-spacing: var(--spacing);
       transition: var(--transition);
-      padding: 0.5rem 0;
+      padding: 0.5rem 0.5rem;
     }
+
+    .nav-links li {
+      margin-right: .5rem;
+    }
+
     .nav-links a:hover {
-      color: var(--green);
-      box-shadow: 0px 2px var(--green);
+      color: var(--yellow);
+      background-color: var(--slate);
+      border-radius: .75rem;
+      box-shadow: 0px 2px var(--yellow);
     }
 
     .nav-links a::after {
@@ -271,7 +278,7 @@ Navbar
         transform: scaleX(0);
         transition: transform 0.4s ease;
         transform-origin: bottom right;
-        background-color: var(--green);
+        background-color: var(--yellow);
     }
 
     .nav-links a:hover::after {
@@ -322,7 +329,7 @@ Sidebar
     display: block;
     text-align: center;
     text-transform: capitalize;
-    color: var(--dark-green);
+    color: var(--slate);
     letter-spacing: var(--spacing);
     margin-bottom: 0.5rem;
     font-size: 2rem;
@@ -694,11 +701,19 @@ Projects
 .project {
   display: grid;
   margin-bottom: 4rem;
+  align-items: center;
+  justify-content: center;
 }
+
+.img-div{
+  display: flex;
+  justify-content: center;
+}
+
 .project-img {
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
-  height: 20rem;
+  height: 12rem;
   z-index: 1;
 }
 .project-img::after {
@@ -728,7 +743,7 @@ Projects
   margin-bottom: 0.75rem;
 }
 .project-info h3 {
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
 }
@@ -763,24 +778,34 @@ Projects
 .project-icon:hover {
   color: var(--lightest-slate);
 }
-@media screen and (min-width: 576px) {
+@media screen and (max-width: 576px) {
+  .project{
+    display: flexbox;
+  }
+  .img-div{
+    max-width: 95vw;
+  }
+  .project-img{
+    width: 100%;
+    height: auto;
+  }
   .project-img {
-    height: 19rem;
+    height: 16rem;
   }
 }
-@media screen and (min-width: 768px) {
-  .project-img {
-    height: 22rem;
-  }
-}
+
+
 @media screen and (min-width: 992px) {
   .project {
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
   }
-  .project-img {
+  .img-div {
+    display: block;
     grid-column: 2 / span 8;
     grid-row: 1 / 1;
+  }
+  .project-img {
     height: 34rem;
     border-radius: var(--radius);
     box-shadow: var(--dark-shadow);
@@ -793,10 +818,14 @@ Projects
     grid-column: 5 /12;
     grid-row: 1 / 1;
   }
-  .project:nth-of-type(even) .project-img {
+  .project:nth-of-type(even) .img-div {
     grid-column: 8 / -1;
     grid-row: 1 / 1;
   }
+  .project:nth-of-type(even) .project-img {
+    height: 40rem;
+  }
+
   .project:nth-of-type(even) .project-info {
     grid-column: 2 / span 7;
     grid-row: 1 / 1;
@@ -819,7 +848,8 @@ Contact
   text-align: center;
   letter-spacing: var(--spacing);
   line-height: 2rem;
-  font-family: var(--font-sans);
+  font-weight: 300;
+  font-family: var(--font-serif);
 }
 
 @media screen and (min-width: 992px) {

@@ -29,7 +29,7 @@ const data = [
     {
         id: 5,
         text: "Resume",
-        url: "https://drive.google.com/file/d/1kekKQX7JYlBMpzc4lIwf9QpCiqEaEa_5/view?usp=sharing"
+        url: "https://drive.google.com/file/d/13jZGLgTgAricJ1okq07wzVepyQTaWIP3/view?usp=sharing"
     }
 ]
 

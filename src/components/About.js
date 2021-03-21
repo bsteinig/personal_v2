@@ -36,9 +36,8 @@ const About = () => {
                 
                 <Image fluid={profile.childImageSharp.fluid} className="about-img"/>
                 <article className="about-text">
-                    <Title title={thingy}></Title>
+                    <Title title="about me"></Title>
                     <p>{info}</p>
-                    <p>helloo <br/>again</p>
                     <div className="about-stack">
                         {stack.map((item) => {
                             return (

@@ -3,7 +3,7 @@ module.exports = {
     title: "Benjamin Steinig",
     description: "Welcome to my personal website!",
     author: "Ben Steinig",
-    siteUrl: "https://bensteinig.com",
+    siteUrl: "https://www.bensteinig.com",
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -14,6 +14,7 @@ module.exports = {
       options: {
         name: `assets`,
         path: `${__dirname}/src/assets/`,
+        icon: `src/assets/favicon.ico`
       },
     },
     {
